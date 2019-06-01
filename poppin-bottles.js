@@ -1,6 +1,8 @@
-var costOfBottle = {};
-
 var totalBottles = function(num) {
+    var totals = {
+        emptyBottles: 0,
+        bottleCaps: 0
+    };
     var emptyBottles = 0;
     var bottleCaps = 0;
     var fullBottles = Math.floor(num / 2);
@@ -16,9 +18,12 @@ var totalBottles = function(num) {
         newFullBottles = 0;
 
         newFullBottles += Math.floor(emptyBottles / 2);
+        totals.emptyBottles += Math.floor(emptyBottles / 2);
+
         emptyBottles %= 2;
         // console.log(emptyBottles);
         newFullBottles += Math.floor(bottleCaps / 4);
+        totals.bottleCaps += Math.floor(bottleCaps / 4);
         bottleCaps %= 4;
 
         fullBottles += newFullBottles;
@@ -26,7 +31,7 @@ var totalBottles = function(num) {
 
 
     }
-    return fullBottles;
+    return "TOTAL BOTTLES: " + fullBottles + "\nREMAINING BOTTLES: " + emptyBottles + "\nREMAINING CAPS: " + bottleCaps + "\nTOTAL EARNED: \n   BOTTLES: " + totals.emptyBottles + "\n   CAPS: " + totals.bottleCaps;
 
 }
 
