@@ -9,7 +9,7 @@ var totalBottles = function(num) {
     // bottleCaps += fullBottles;
     // console.log(fullBottles);
     while (newFullBottles > 0) {
-        console.log(newFullBottles, fullBottles, emptyBottles, bottleCaps);
+        // console.log(newFullBottles, fullBottles, emptyBottles, bottleCaps);
         emptyBottles += newFullBottles;
         bottleCaps += newFullBottles;
         //finish drinking
